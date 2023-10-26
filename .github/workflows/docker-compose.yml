@@ -20,11 +20,11 @@ jobs:
         username: ${{ secrets.DOCKERHUB_USERNAME }}
         password: ${{ secrets.DOCKERHUB_PASSWORD }}
     
-    - name: Build and push Docker image 
-      run: |
-       docker build -t hanaparthi/chatapi:latest .  
-       docker push hanaparthi/chatapi:latest
+    # - name: Build and push Docker image 
+    #   run: |
+    #    docker build -t hanaparthi/chatapi:latest .  
+    #    docker push hanaparthi/chatapi:latest
     
-    - name: Run Docker container
-      run: |
-       docker run -d -p 3000:3000 hanaparthi/chatapi:latest
+    # - name: Run Docker container
+    #   run: |
+    #    docker run -d -p 3000:3000 hanaparthi/chatapi:latest
