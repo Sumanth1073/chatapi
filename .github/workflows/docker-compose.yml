@@ -17,6 +17,4 @@ jobs:
           password: dckr_pat_2GmvHldBFEDUUhvpjTjLSlk7Tnw
       - 
         name: Build and push Docker image 
-        run: |
-          docker build -t hanaparthi/chatapi:latest .
-          docker push hanaparthi/chatapi:latest
+        run: docker build -t hanaparthi/chatapi:latest .
