@@ -21,4 +21,4 @@ jobs:
         with:
           context: ./Dockerfile
           push: true
-          tags: hanaparthi/chatapi:latest .
+          tags: hanaparthi/chatapi:latest
