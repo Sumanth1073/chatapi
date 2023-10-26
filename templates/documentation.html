@@ -1,0 +1,99 @@
+<html>
+
+<head>
+<title>Chat API Docs</title>
+
+<style>
+
+body {
+  font-family: Arial;  
+}
+
+h1, h2 {
+  text-align: center;
+}
+
+p {
+  margin: 20px 0;
+}
+
+.get {
+  background-color: #97f295;
+  padding: 8px;
+  border-radius: 4px;
+}
+
+.post {
+  background-color: #72ddf7;
+  padding: 8px;  
+  border-radius: 4px;
+}
+
+.patch {
+  background-color: #fde469;
+  padding: 8px;
+  border-radius: 4px;  
+}
+
+.delete {
+  background-color: #f17377;
+  padding: 8px;
+  border-radius: 4px;
+}
+
+.base-url {
+  background-color: rgb(9, 129, 131);
+  padding: 8px;
+  border-radius: 4px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1>Chat API Docs</h1>
+
+<p class="base-url">Base url : http://127.0.0.1:5000/</p>
+
+<h2>Endpoints</h2>
+
+<p class="get">/get_users - GET</p>
+<p>Returns JSON list of all unique users in the message database.</p>
+
+<p class="get">/get_messages - GET</p>
+<p>Returns JSON of all messages in the database.</p>
+
+<p class="post">/new_message - POST</p>
+<p>Creates a new message. Expects form data for 'message', 'from_user', and 'to_user'.</p>
+
+<p class="patch">/update_message - PATCH</p>
+<p>Updates a message by ID. Expects form data for 'id' and 'edited_message_text'.</p>
+
+<p class="delete">/delete_message - DELETE</p>
+<p>Deletes a message by ID. Expects form data for 'id'.</p>
+
+<h2>Example Requests</h2>
+
+<p class="get">/get_users - GET</p>
+
+<p class="post">/new_message - POST</p>
+<p>Form data:
+  <br>message: Hello world!
+  <br>from_user: alice
+  <br>to_user: bob
+</p>
+
+<p class="patch">/update_message - PATCH</p>
+<p>Form data: 
+  <br>id: 5
+  <br>edited_message_text: Hello there!  
+</p>
+
+</body>
+
+</html>
+
+
+
