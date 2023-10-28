@@ -21,9 +21,8 @@ jobs:
         name: Build Docker image
         uses: docker/build-push-action@v3
         with:
-          context: ./Dockerfile
           push: true
-          tags: hanaparthi/chatapi:latest
+          tags: hanaparthi/chatlog:latest
       -
         name: Push Docker image
         run: docker push hanaparthi/chatapi:latest
