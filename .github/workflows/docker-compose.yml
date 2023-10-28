@@ -1,6 +1,4 @@
-name: Deploy Flask API
-
-on: 
+on:
   push:
     branches:
       - main
@@ -15,11 +13,23 @@ jobs:
         with:
           username: hanaparthi
           password: dckr_pat_2GmvHldBFEDUUhvpjTjLSlk7Tnw
-      - 
-        name: Build
-        run: docker build -t hanaparthi/chatapi:latest .  
-      - 
-        name: port
-        run: docker container run -d -p 3000:3000 hanaparthi/chatapi:latest
 
-      
+  build:
+    runs-on: ubuntu-latest
+    needs: login
+    steps:
+      -
+        name: Build Docker image
+        uses: docker/build-push-action@v3
+        with:
+          context: ./Dockerfile
+          push: true
+          tags: hanaparthi/chatapi:latest
+
+  port:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      -
+        name: Run Docker container
+        run: docker container run -d -p 3000:3000 hanaparthi/chatapi:latest
