@@ -24,8 +24,5 @@ jobs:
           push: true
           tags: hanaparthi/chatlog:latest
       -
-        name: Push Docker image
-        run: docker push hanaparthi/chatapi:latest
-      -
         name: Run Docker container
         run: docker container run -d -p 3000:3000 hanaparthi/chatapi:latest
